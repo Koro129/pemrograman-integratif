@@ -7,7 +7,7 @@ import class_pb2
 import class_pb2_grpc
 
 # Inisialisasi Firebase Admin SDK
-cred = credentials.Certificate('serviceAccountKey.json')
+cred = credentials.Certificate('<PATH-UNTUK-FILE-serviceAccountKey.json>')
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
