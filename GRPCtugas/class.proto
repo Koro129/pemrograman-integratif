@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package mypackage;
+
+option java_package = "com.example.grpc";
+option java_multiple_files = true;
+option java_outer_classname = "ClassProto";
+
+service ClassService {
+  rpc GetAllClasses (Empty) returns (AllClasses);
+  rpc AddClass (Class) returns (ClassID);
+  rpc EditClass (Class) returns (ClassID);
+  rpc RemoveClass (ClassID) returns (Empty);
+}
+
+message Class {
+  string id = 1;
+  string name = 2;
+  string location = 3;
+}
+
+message ClassID {
+  string id = 1;
+}
+
+message AllClasses {
+  repeated Class classes = 1;
+}
+
+message Empty {}
